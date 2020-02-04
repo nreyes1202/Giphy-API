@@ -2,6 +2,16 @@
     background-color: black;
     color: white;
 }
+.container {
+    background-color: khaki;
+}
 h2, p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.form {
+    float: right;
+}
+.list-of-gifs {
+    float: left;
+    background-color: lightcoral;
 }

@@ -18,11 +18,11 @@
     <header class="container-fluid text-center">
         <div class="text">
             <h2>Giphy Fun!</h2>
-            <p>Click on a Giphy button to show related gifs. Click on another button and see what happens!</p>
+            <h4>Click on a Giphy button to show related gifs. Click on another button and see what happens!</h4>
         </div>
     </header>
 
-    <div id="gif-buttons-here"></div>
+    <div id="buttons-view"></div>
 
     <section class="list-of-gifs">
         <div class="container">
@@ -33,22 +33,11 @@
             </div>
     </section>
 
-    <form class="form">
-        <p> Add a show!</p>
+    <form id="form">
         <input type="giphy-input">
-        <button type="submit" id="submit-button">Submit</button>
+        <button type="submit" id="submit-button"><strong>Submit</strong></button>
+        <input id="add-show" type="submit" value="Add a show!">
     </form>
-
-
-
-
-
-
-
-
-
-
-
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

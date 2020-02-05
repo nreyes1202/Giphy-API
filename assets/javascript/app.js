@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
   var topics = ['parks and rec', 'the good place', 'doctor who', 'the office', 'the walking dead', 'golden girls', 'schitts creek',
-    'breaking bad', 'westworld', 'saturday night live', 'unbreakable kimmy schmidt',
+    'breaking bad', 'saturday night live', 'unbreakable kimmy schmidt',
   ],
 
   function renderButtons() {
@@ -16,21 +16,39 @@ $(document).ready(function () {
       $("#buttons-view").append(topics);
     }
 
-
+    renderButtons();
+    function gifImages(){
+    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=rseYwBLyvT0dvfCZ8DCjwzWA85NNlIDP";
+  
+  
+  
+    // $.ajax({
+    //   url: queryURL,
+    //   method: "GET"
+    // }).then(function (response) {
+    //   console.log(response)
+    // });
 
   }
-  var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=rseYwBLyvT0dvfCZ8DCjwzWA85NNlIDP";
+  $("#add-show").on("click", function(event) {
+    // event.preventDefault() prevents the form from trying to submit itself.
+    // We're using a form so that the user can hit enter instead of clicking the button if they want
+    event.preventDefault();
 
+    // This line will grab the text from the input box
+    var movie = $("#movie-input").val().trim();
+    // The movie from the textbox is then added to our array
+    movies.push(movie);
 
-
-  $.ajax({
-    url: queryURL,
-    method: "GET"
-  }).then(function (response) {
-    console.log(response)
+    // calling renderButtons which handles the processing of our movie array
+    renderButtons();
   });
 
 
 
+  
+
+
+  }
 
 }

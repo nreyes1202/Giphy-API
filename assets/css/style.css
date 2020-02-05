@@ -6,7 +6,7 @@
 h2, h4, p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.form {
+#form {
     float: right;
     padding-right: 10px;
 }

@@ -1,17 +1,17 @@
 .container-fluid {
     background-color: black;
     color: white;
-}
-.container {
-    background-color: khaki;
+    padding: 10px 0px;
 }
 h2, p {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .form {
     float: right;
+    padding-right: 10px;
 }
 .list-of-gifs {
-    float: left;
+    padding-top: 30px;
+    margin-top: auto;
     background-color: lightcoral;
 }

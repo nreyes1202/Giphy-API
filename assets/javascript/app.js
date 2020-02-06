@@ -24,8 +24,16 @@ $(document).ready(function () {
       $("#buttons-view").append(`<button class='gif' data-name="${topics[i]}">${topics[i]}</button>`);
     }
   }
+
   renderButtons();
-  function gifImages() {
+
+
+  // setup an event handler that grabs text value from buttons
+  // take text value and call api (gifImages(text))
+
+  
+
+  function gifImages(gif) {
     var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=rseYwBLyvT0dvfCZ8DCjwzWA85NNlIDP";
     $.ajax({
       url: queryURL,

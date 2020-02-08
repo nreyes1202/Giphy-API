@@ -1,49 +1,49 @@
 $(document).ready(function () {
-
   var topics = ['parks and rec', 'the good place', 'doctor who', 'the office', 'the walking dead', 'golden girls', 'schitts creek',
     'breaking bad', 'saturday night live', 'unbreakable kimmy schmidt',
   ];
 
   function renderButtons() {
-
-    $("#buttons-view").empty();
+    //$("#buttons-view").empty();
 
     for (var i = 0; i < topics.length; i++) {
-
       // making a new button
       // <button></button>
       var newGif = $("<button>").text(topics[i]);
        // <button>topics[i]</button>
       //giving the new button an attribute of new data
        // <button data-name="topics[i]">topics[i]</button>
-      newGif.attr("data-name", topics[i]);
+      newGif.data("name", topics[i]);
        // <button class='gif' data-name="topics[i]">topics[i]</button>
 
       newGif.addClass("gif");
       // Placing it on the page
-      $("#buttons-view").append(`<button class='gif' data-name="${topics[i]}">${topics[i]}</button>`);
+      //$("#buttons-view").append(`<button class='gif' data-name="${topics[i]}">${topics[i]}</button>`);
+      $("#buttons-view").append(newGif);
     }
   }
 
   renderButtons();
 
-
   // setup an event handler that grabs text value from buttons
   // take text value and call api (gifImages(text))
 
+  $('button.gif').click(function(event) {
+    function gifImages(term) {
+      console.log(term)
+      var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=rseYwBLyvT0dvfCZ8DCjwzWA85NNlIDP";
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        
+      });
+    };
+
+    gifImages($(event.target).data('name'))
+  });
+
   
-
-  function gifImages(gif) {
-    var queryURL = "https://api.giphy.com/v1/gifs/trending?api_key=rseYwBLyvT0dvfCZ8DCjwzWA85NNlIDP";
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      console.log(response)
-    });
-  }
-
-  gifImages();
 
   // $("#add-show").on("click", function (event) {
   //   // event.preventDefault() prevents the form from trying to submit itself.
